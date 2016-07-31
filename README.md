@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
@@ -25,5 +25,4 @@ Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE.
 To watch some training videos, visit http://www.youtube.com/user/c9ide
 =======
 # first-ruby-rails
-hackerthon
->>>>>>> 992a14f4f9e1246d84a83dbd6466dc50ea9d057b
+At hackerthon
