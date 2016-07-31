@@ -1,0 +1,62 @@
+<%= render :partial => 'home/up_navbar' %>
+
+
+<section id="main">
+  <section id="content">
+    <div class="text-center">
+      <ul class="nav nav-pills row main-nav">
+        <li role="presentation" class="col-md-2 col-md-offset-3"><a href="/board_index">Projects</a></li>
+        <li role="presentation" class="col-md-2" ><a href="/ppl_index">People</a></li>
+        <li role="presentation" class="col-md-2"><a href="/task_index">Events</a></li>
+      </ul>        
+    </div>
+  </section>
+        
+  <div class ="container text-center" style="margin-bottom:30dp;">
+    <h1><%= @post.title %></h1>
+    <p><%= @post.copy %></p></br>
+    </br>
+    starter.<%= @post.starter %></br>
+    </br>
+    <strong>모집기간</strong> <%= @post.gather_date %> ~ <%= @post.gather_end_date %></br>
+    </br>
+    <strong>프로젝트 기간</strong> <%= @post.activity_date %> ~ <%= @post.activity_end_date %></br>
+    </br>
+    <strong>모집인원</t></strong>
+    <%= @post.co_worker1 %> <%= @post.co_worker1_num %>명
+    <%= @post.co_worker2 %> <%= @post.co_worker2_num %>명
+    <%= @post.co_worker3 %> <%= @post.co_worker3_num %>명</br>
+    </br>
+    
+  <img src="/no_image<%=@post.id%>.png" width="500" alt="...">
+
+  </div>
+  
+  <div class="container">
+  <% @post.comments.each do |c| %>
+  <p><%= c.content %></p>
+  <% end %>
+  <form action="/board_comment_create" method="POST">
+    <div class="form-group">
+      <input name="content" type="text" class="form-control" id="inputTitle" placeholder="Enter the reply">
+    </div>
+    <input name="post_id" type="hidden" value="<%= @post.id %>">
+    <input name="user_id" type="hidden" value="<%= current_user.id %>">
+    <button type="submit" class="btn btn-default">신청하기</button>
+  </form>
+  </div>
+</section>
+
+<footer id="footer">
+    Copyright &copy; 2016 Costar
+    
+    <ul class="f-menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Dashboard</a></li>
+        <li><a href="">Reports</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</footer>
+
+<%= render :partial => 'home/view_bottom_script' %>

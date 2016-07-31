@@ -1,0 +1,55 @@
+<%= render :partial => 'home/up_navbar' %>
+
+<section id="main">
+    <section id="content">
+        <div class="text-center">
+            <ul class="nav nav-pills row main-nav">
+                <li role="presentation" class="col-md-2 col-md-offset-3"><a href="/board_index">Projects</a></li>
+                <li role="presentation" class="col-md-2" ><a href="/ppl_index">People</a></li>
+                <li role="presentation" class="col-md-2"><a href="/task_index">Events</a></li>
+            </ul>        
+        </div>
+  
+    </section>
+    <div class="new-div">
+        <a href="/board_new"><img src="new_button.png"></a>
+    </div>
+    
+    <div class="col-sm-3 col-sm-push-9 " >
+	<img src="/tag.png"  alt="...">
+    </div>
+
+    <div class ="container text-center">
+        <% @post.each do |post| %>
+          <div class="col-md-3">
+            <div class="thumbnail">
+              <a href="/board_view/<%=post.id%>"><img src="/no_image<%=post.id%>.png" width="300" length="300" alt="..."></a>
+              <div class="caption">
+                <a href="/board_view/<%=post.id%>"><p class="text-info text-left"><strong><%=post.title%></strong></p></a>
+                <p class="text-left"> by.<%=post.starter%> </p>
+                <p class="text-left"> <span class="label label-info">모집 중</span>
+                <%= post.co_worker1 %>: <%= post.co_worker1_num %>명
+                <%= post.co_worker2 %>: <%= post.co_worker2_num %>명
+                <%= post.co_worker3 %>: <%= post.co_worker3_num %>명 </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+    
+  </section>
+ 
+  
+<footer id="footer">
+    Copyright &copy; 2016 Costar
+    
+    <ul class="f-menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Dashboard</a></li>
+        <li><a href="">Reports</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</footer>
+
+<%= render :partial => 'home/bottom_script' %>

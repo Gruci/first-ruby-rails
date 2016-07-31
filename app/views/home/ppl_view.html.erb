@@ -1,0 +1,42 @@
+<%= render :partial => 'home/up_navbar' %>
+
+
+<section id="main">
+  <section id="content">
+    <div class="text-center">
+      <ul class="nav nav-pills row main-nav">
+        <li role="presentation" class="col-md-2 col-md-offset-3"><a href="/board_index">Projects</a></li>
+        <li role="presentation" class="col-md-2" ><a href="/ppl_index">People</a></li>
+        <li role="presentation" class="col-md-2"><a href="/task_index">Events</a></li>
+      </ul>        
+    </div>
+  </section>
+        <div class ="container text-center">
+        
+        <h1><%= @costarter.title %></h1></br>
+        <strong>작성자</strong>  <%= @costarter.email %></br>
+        <strong>이름</strong>  <%= @costarter.title %></br>
+        <strong>Part</strong>  <%= @costarter.copy %></br>
+        <strong>개요</strong>  <%= @costarter.project %></br>
+        <strong>자신있는 분야</strong>  <%= @costarter.starter %></br>
+        <strong>부가설명</strong>  <%= @costarter.content %></br>
+      <img src="/costarter<%=@costarter.id%>.png" width="500" alt="...">
+
+        </div>        
+
+</div>
+  </section>
+
+<footer id="footer">
+    Copyright &copy; 2016 Costar
+    
+    <ul class="f-menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Dashboard</a></li>
+        <li><a href="">Reports</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</footer>
+
+<%= render :partial => 'home/view_bottom_script' %>
